@@ -2,6 +2,17 @@ local M = {}
 
 require('blink.cmp').get_lsp_capabilities()
 
+vim.lsp.config("harper_ls",
+	{
+
+		filetypes = { "markdown" },
+
+	}
+
+
+)
+
+
 -- disable semanticTokens
 M.on_init = function(client, _)
 	if vim.fn.has "nvim-0.11" ~= 1 then
