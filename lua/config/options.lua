@@ -3,7 +3,7 @@ local opt = vim.opt
 -- Line numbers
 opt.number = true
 opt.relativenumber = true
-
+vim.opt.splitright = true
 -- Clipboard (macOS)
 -- opt.clipboard = "unnamedplus"
 
