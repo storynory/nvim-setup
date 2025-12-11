@@ -81,3 +81,7 @@ vim.api.nvim_create_user_command("LspList", function()
 		print("• " .. c.name)
 	end
 end, {})
+
+-- telescope look
+vim.api.nvim_set_hl(0, "TelescopeBorder", { fg = "#89b4fa" })
+vim.api.nvim_set_hl(0, "TelescopeSelection", { bg = "#313244", bold = true })

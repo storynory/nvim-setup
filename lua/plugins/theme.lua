@@ -4,7 +4,7 @@ return {
 		lazy = false,
 		priority = 1000,
 		opts = {
-			style = "moon", -- options: "night", "storm", "day", "moon"
+			style = "day", -- options: "night", "storm", "day", "moon"
 			transparent = true,
 		},
 	},

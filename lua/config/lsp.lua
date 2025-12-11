@@ -2,6 +2,19 @@ local M = {}
 
 require('blink.cmp').get_lsp_capabilities()
 
+-- disable semanticTokens
+M.on_init = function(client, _)
+	if vim.fn.has "nvim-0.11" ~= 1 then
+		if client.supports_method "textDocument/semanticTokens" then
+			client.server_capabilities.semanticTokensProvider = nil
+		end
+	else
+		if client:supports_method "textDocument/semanticTokens" then
+			client.server_capabilities.semanticTokensProvider = nil
+		end
+	end
+end
+
 -- Add keymaps for LSP buffers
 function M.on_attach(_, bufnr)
 	local map = function(mode, lhs, rhs)
