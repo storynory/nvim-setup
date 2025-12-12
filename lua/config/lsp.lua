@@ -6,10 +6,18 @@ vim.lsp.config("harper_ls",
 	{
 
 		filetypes = { "markdown" },
+		settings = {
+			["harper-ls"] = {
+				linters = {
+					-- 	SentenceCapitalization = false,
+					SpellCheck = false,
+					PossessiveNoun = true,
+					NoOxfordComma = true,
+					BoringWords = true,
+					UseGenitive = true,
 
-		linters = {
-
-			SpellCheck = false,
+				}
+			}
 		}
 
 	}
