@@ -1,3 +1,12 @@
+vim.api.nvim_create_autocmd("VimEnter", {
+	callback = function()
+		if vim.fn.argc() == 0 then
+			require("telescope.builtin").find_files()
+		end
+	end,
+})
+
+
 -- Emergency save when file is readonly
 vim.api.nvim_create_autocmd("BufReadPre", {
 	callback = function()
@@ -25,6 +34,34 @@ vim.api.nvim_create_autocmd("BufWritePre", {
 		vim.fn.winrestview(save)
 	end,
 })
+
+-- remove doulble + spaces on save
+vim.api.nvim_create_autocmd("BufWritePre", {
+	pattern = "*.md",
+	callback = function()
+		local view = vim.fn.winsaveview()
+		local buf = vim.api.nvim_get_current_buf()
+		local lines = vim.api.nvim_buf_get_lines(buf, 0, -1, false)
+
+		local in_code_block = false
+
+		for i, line in ipairs(lines) do
+			-- Toggle fenced code block state
+			if line:match("^%s*```") then
+				in_code_block = not in_code_block
+			end
+
+			if not in_code_block then
+				-- Collapse 2+ spaces to 1, but never touch indentation
+				lines[i] = line:gsub("([^%s])%s%s+", "%1 ")
+			end
+		end
+
+		vim.api.nvim_buf_set_lines(buf, 0, -1, false, lines)
+		vim.fn.winrestview(view)
+	end,
+})
+
 
 -- Zen writing settings for prose files
 vim.api.nvim_create_autocmd("FileType", {
