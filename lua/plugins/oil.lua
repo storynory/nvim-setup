@@ -6,7 +6,6 @@ return {
 
 		config = function()
 			require("oil").setup({
-
 				default_file_explorer = true,
 				preview_split = "auto",
 				-- ⬇ ONLY affects floating windows, but we also set it for consistency
