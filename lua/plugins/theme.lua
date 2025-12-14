@@ -19,4 +19,8 @@ return {
 		},
 	},
 
+	{ "rose-pine/neovim", name = "rose-pine",  priority = 1000 },
+	--  latte  frappe  macchiato mocha
+	{ "catppuccin/nvim",  name = "catppuccin", priority = 1000 }
+
 }

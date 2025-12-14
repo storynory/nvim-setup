@@ -1,10 +1,10 @@
-vim.api.nvim_create_autocmd("VimEnter", {
-	callback = function()
-		if vim.fn.argc() == 0 then
-			require("telescope.builtin").find_files()
-		end
-	end,
-})
+--vim.api.nvim_create_autocmd("VimEnter", {
+--	callback = function()
+--		if vim.fn.argc() == 0 then
+--			require("telescope.builtin").find_files()
+--		end
+--	end,
+--})
 
 
 -- Emergency save when file is readonly
@@ -69,6 +69,8 @@ vim.api.nvim_create_autocmd("FileType", {
 	callback = function()
 		vim.opt_local.spell = true
 		vim.opt_local.spelllang = "en_gb"
+		--vim.cmd('colorscheme kanagawa-wave')
+
 
 		vim.opt_local.textwidth = 0
 		vim.opt_local.wrap = true

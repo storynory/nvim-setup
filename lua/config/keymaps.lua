@@ -1,6 +1,5 @@
 -- Add keymaps here as you grow your config
 local map = vim.keymap.set
-
 map("n", "<leader>q", ":q!<CR>", { desc = "quit no save" })
 map("n", "<leader>w", ":w<CR>", { desc = "save" })
 map("n", "<leader>bd", ":bd<CR>", { desc = "quit buffer" })
