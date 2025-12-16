@@ -3,6 +3,8 @@ return {
 	build = ":TSUpdate",
 	event = { "BufReadPost", "BufNewFile" },
 	opts = {
+
+
 		ensure_installed = {
 			"lua",
 			"html",
