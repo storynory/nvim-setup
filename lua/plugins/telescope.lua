@@ -51,7 +51,7 @@ return {
 			vim.keymap.set('n', '<leader>fg', builtin.live_grep, { desc = '[S]earch by [G]rep' })
 			vim.keymap.set('n', '<leader>fd', builtin.diagnostics, { desc = '[S]earch [D]iagnostics' })
 			vim.keymap.set('n', '<leader>fr', builtin.oldfiles, { desc = '[S]earch Recent Files' })
-
+			vim.keymap.set('n', '<leader>fb', builtin.buffers, { desc = 'Telescope buffers' })
 			-- Buffer fuzzy search with dropdown
 			vim.keymap.set('n', '<leader>/', function()
 				builtin.current_buffer_fuzzy_find(require('telescope.themes').get_dropdown({
